@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="icon" href="../images/encryption.png" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='home1.css') }}"
+    />
+    <link rel="stylesheet" href="../static/home1.css" />
+    <script
+      src="https://kit.fontawesome.com/5660526553.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="blob"></div>
+    <div id="blur">
+      <header>
+        <nav>
+          <i class="fa-solid fa-bars fa-xl"></i>
+          <ul>
+            <li class="text"><a>Home</a></li>
+            <li class="text"><a>LogOut</a></li>
+            <li class="text"><a>About Us</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="circle"></div>
+      <div class="huge">
+        <h1 id="t_effect" data-value="File Content Encryption & Decryption">
+          File Content <br />Encryption &<br />Decryption
+        </h1>
+      </div>
+      <div id="form">
+        <h1 id="text1">Write a text here</h1>
+        <form class="inp" action="{{url_for('save')}}" method="post">
+          <textarea
+            name="text_input"
+            id="text_input"
+            placeholder="Input here"
+          ></textarea>
+          <input
+            type="number"
+            id="key_value"
+            name="key_value"
+            placeholder="Secret Key"
+          />
+          <input
+            id="file_name"
+            type="text"
+            name="file_name"
+            placeholder="File Name"
+          />
+          <button type="submit" id="submit_button">Submit</button>
+        </form>
+      </div>
+      <hr />
+      <div id="form2" style="height: 300px">
+        <h2 data-value="ENCRYPTION">ENCRYPTION</h2>
+        <form id="encry" action="{{url_for('encrypt')}}" method="post">
+          <input type="file" id="choose_file" name="file" />
+          <button type="submit" id="encry_butt">Encrypt</button>
+        </form>
+      </div>
+      <hr />
+      <div id="form3" style="height: 300px">
+        <h3 data-value="DECRYPTION">XXXXXXXXXX</h3>
+        <form id="decry" action="{{url_for('decrypt')}}" method="post">
+          <input type="file" id="choose_file2" name="dfile" />
+          <input type="number" id="decry_num" name="key_num" />
+          <button type="submit" id="decry_butt">Decrypt</button>
+        </form>
+      </div>
+      <footer class="footer-distributed">
+        <div class="footer-left">
+          <h3
+            style="
+              position: absolute;
+              left: 80px;
+              bottom: 150px;
+              font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                'Helvetica Neue', sans-serif;
+            "
+          >
+            File<span>Encryption</span>
+          </h3>
+
+          <p
+            class="footer-links"
+            style="
+              position: absolute;
+              bottom: 90px;
+              left: 90px;
+              font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                'Helvetica Neue', sans-serif;
+            "
+          >
+            <a href="#">Home</a>
+            |
+            <a href="#">About</a>
+            |
+            <a href="#">Contact</a>
+            |
+            <a href="#">Blog</a>
+          </p>
+
+          <p class="footer-company-name">
+            Copyright © 2023<strong>"Trident "</strong> All rights reserved
+          </p>
+        </div>
+        <div class="footer-center">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p
+              style="
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                  'Helvetica Neue', sans-serif;
+              "
+            >
+              <span>Karnataka</span> Bengaluru
+            </p>
+          </div>
+
+          <div>
+            <i class="fa fa-phone"></i>
+            <p
+              style="
+                font-size: medium;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                  'Helvetica Neue', sans-serif;
+              "
+            >
+              +91 8073761551
+            </p>
+          </div>
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p
+              style="
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                  'Helvetica Neue', sans-serif;
+              "
+            >
+              <a href="#">nivasreddy275@gmail.com</a>
+            </p>
+          </div>
+        </div>
+        <div id="footer-right">
+          <section>
+            <div id="aboutus">
+              <b id="web">About our website</b>
+              <p id="content">
+                Welcome to File content Encryption<br />
+                And Decryption website, Our mission<br />
+                is to empower individuals and business with<br />
+                robust encryption solutions to protect their<br />sensitive data
+                from unauthorized access.
+              </p>
+            </div>
+          </section>
+          <section>
+            <div id="follow">
+              <h4 id="us">Follow us</h4>
+              <a href="#"><span class="fab fa-facebook-f"></span></a>
+              <a href="#"><span class="fab fa-twitter"></span></a>
+              <a href="#"><span class="fab fa-instagram"></span></a>
+              <a href="#"><span class="fab fa-youtube"></span></a>
+              <a href="#"><span class="fab fa-linkedin"></span></a>
+            </div>
+          </section>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="vertical-line1"></div>
+      </footer>
+    </div>
+    <script type="text/javascript" src="../static/home1.js"></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static',filename='home1.js') }}"
+    ></script>
+  </body>
+</html>
